@@ -32,10 +32,13 @@ const broadcaster = new Broadcaster()
 
 broadcaster.start()
 broadcaster.on("data", (data) => {
+
 	// Send data to all connected clients on websocket
 	wss.clients.forEach((socket) => {
 		socket.send(JSON.stringify(data))
+		
 	})
+	// console.log(data) Shows the data from server
 })
 
 // Start listening on port 3000 for both express app and WS server

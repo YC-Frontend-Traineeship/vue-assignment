@@ -35,6 +35,7 @@ class Broadcaster extends EventEmitter {
 				}))
 				.once("finish", () => {
 					console.log("Finished broadcasting")
+					
 					if(this.broadcasting) {
 						console.log("Re-broadcast")
 						broadcast()

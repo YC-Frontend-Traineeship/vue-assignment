@@ -1,0 +1,70 @@
+<html>
+
+    <head>
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <h1>The Assignment</h1>
+        <div id="app">
+            {{ message }} 
+            <h1>The Assignment</h1>
+            <section>
+                <div>
+                    <p>GPS</p>
+                    <p>{{ gps }}</p>
+                </div>
+                <div>
+                    <p>Current Speed</p>
+                    <p></p>{{ speed }}</p>
+                </div>
+                <div>
+                    <p>State of Change</p>
+                    <p>{{ soc }}</p>
+                </div>
+                <div>
+                    <p>Energy</p>
+                    <p>{{ energy }}</p>
+                </div>
+                <div>
+                    <p>Odometer</p>
+                    <p>{{ odo }}</p>
+                </div>
+            </section>
+        </div>        
+    </body>
+
+    <script src="./index.js"></script>
+    
+    
+    
+    <script> 
+      // live-server --port=xxxxx
+
+      // 1. op connection open, error en message
+      // 2  change you e.data back to an object
+      // 3 get all HTML element you want to change the content of
+      // 4. assign all the correct data to the correct HTML element
+
+      // 5. start with Vue.js
+      // NOW with hints
+      // 6. connect the websocket connection IN a lifecycle method (check the docs of vuejs.org getting started
+      // 7. set the layout e.g. the HTML like you did in the index.html
+      // 8. on data get - onmessage - you can call a method (you have to make) to handle assigning data 
+      
+      // START with graphs (probably >.>)
+      // 9. well read the docs I think? there is also a vuejs-chartsjs (something like that) which is easier to implemmnt
+      // the map can be done with something like Google map api orso - check which one in the array is longitude and langitude
+
+
+      // MUST
+      // WHEN done with all of this I recommend to do this with Vue CLI as it starts a n server of its own without external dependencies
+
+
+      // CHALLENGES:
+      // Turn everything into ES2015+
+      // Check the extra things they mentioned in the readme - be creative kopje
+      // Make a beautiful readme
+
+    </script>
+</html>
