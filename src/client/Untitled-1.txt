@@ -1,0 +1,80 @@
+Vue.component('barchart-speed', {
+    props: ['speed'],
+    template: '<canvas id="myChart"></canvas>'
+})
+
+var dataTest = function () {
+    // CREATE A NEW WEBSOCKETS CONNECTION
+    const url = 'ws://localhost:3000'
+    const connection = new WebSocket(url)
+
+    connection.onmessage = e => {
+        var dataObj = JSON.parse(e.data)
+        // console.log(dataObj) // All data from websocket
+
+        app.gps = dataObj.gps
+        app.speed = dataObj.speed
+        app.soc = dataObj.soc
+        app.energy = dataObj.energy
+        app.odo = dataObj.odo
+        
+    }
+
+    connection.onerror = error => {
+    console.log(`Websocket error: ${error}`)
+    }
+}
+
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello',
+        gps: 'gps data',
+        speed: 'speed data',
+        soc: 'soc data',
+        energy: 'energy data',
+        odo: 'odo data'
+    },
+    mounted() {
+    },
+    method: {
+        dataTest()
+    }
+    
+});
+
+console.log(dataObj.speed)
+// console.log(app.speed)
+
+
+
+
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        speed: 'speed data',
+        labels: ["speed"],
+        datasets: [{
+            label: '# of Votes',
+            data: [id='speed'],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
