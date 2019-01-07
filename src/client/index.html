@@ -4,33 +4,39 @@
         <!-- development version, includes helpful console warnings -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-        <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>    </head>
+        <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>    
+        <link rel="stylesheet" href="index.css">
+    </head>
     <body>
         <div id="app">
             <h1>The Assignment</h1>
-            <section>
-                <div>
+            <section class="gpsContainer">
+                <div class="gps">
                     <p>GPS</p>
                     <p>{{ gps }}</p>
                 </div>
-                <div>
+            </section>
+            <section class="infoContainer">
+                <div class="speed">
                     <p>Current Speed</p>
                     <p>{{ speed }} km/h</p>
                     <barchart-speed></barchart-speed>
                 </div>
-                <div>
+                <div class="soc">
                     <p>State of Change</p>
                     <p>{{ soc }} %</p>
                     <barchart-soc></barchart-soc>
                 </div>
-                <div>
-                    <p>Energy</p>
-                    <p>{{ energy }} kW</p>
-                </div>
-                <div>
-                    <p>Odometer</p>
-                    <p>{{ odo }} km</p>
-                </div>
+                <footer>
+                    <div class="energy">
+                        <p>Energy</p>
+                        <p>{{ energy }} kW</p>
+                    </div>
+                    <div class="odo">
+                        <p>Odometer</p>
+                        <p>{{ odo }} km</p>
+                    </div>
+                </footer>
             </section>
         </div>        
     </body>

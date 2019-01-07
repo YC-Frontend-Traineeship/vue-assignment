@@ -38,7 +38,7 @@ broadcaster.on("data", (data) => {
 		socket.send(JSON.stringify(data))
 		
 	})
-	// console.log(data) Shows the data from server
+	// console.log(data) //Shows the data from server
 })
 
 // Start listening on port 3000 for both express app and WS server

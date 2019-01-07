@@ -24,7 +24,7 @@ var dataTest = function () {
         app.odo = dataObj.odo
         newDataset = dataObj.speed
         
-        setTimeout(addData(chartSpeed, dataObj.speed), 50000)
+        addData(chartSpeed, dataObj.speed)
         // setTimeout(removeData(chartSpeed), 3000)
         
         addDataSOC(chartSOC, dataObj.soc)
@@ -59,7 +59,7 @@ console.log(app.speed)
     var chartSpeed = new Chart(ctx, {
         type: 'horizontalBar',
         data: {
-            labels: ["speed"],
+            labels: [""],
             datasets: [{
                 label: 'Current Speed',
                 data: [],
@@ -79,6 +79,12 @@ console.log(app.speed)
                         beginAtZero: true
                     }
                 }]
+            },
+            legend: {
+                display: false
+            },
+            title: {
+                display: false
             }
         }
     });
@@ -87,7 +93,7 @@ console.log(app.speed)
     var chartSOC = new Chart(ctx, {
         type: 'horizontalBar',
         data: {
-            labels: ["State of Change "],
+            labels: [""],
             datasets: [{
                 label: 'Speed 1',
                 data: [],
@@ -107,6 +113,12 @@ console.log(app.speed)
                         beginAtZero: true
                     }
                 }]
+            },
+            legend: {
+                display: false
+            },
+            title: {
+                display: false
             }
         }
     });
