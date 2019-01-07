@@ -7,14 +7,7 @@ h1 {
     width: 100%;
 }
 .gpsContainer {
-    margin-right: 100px;
-    
-
-}
-.gps {
-    min-height: 200px;
-    min-width: 200px;
-    background-color: aqua;    
+    margin-right: 50px;
 }
 
 .speed,

@@ -11,10 +11,14 @@
         <div id="app">
             <h1>The Assignment</h1>
             <section class="gpsContainer">
-                <div class="gps">
-                    <p>GPS</p>
-                    <p>{{ gps }}</p>
-                </div>
+                <iframe
+                    width="300"
+                    height="300"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDHhRzuov8HVtA1c1uoxQ-iJgduWyGXv-k&q={{ gps }}" 
+                    allowfullscreen>
+                </iframe>
+                <p>{{ gps }}</p>
             </section>
             <section class="infoContainer">
                 <div class="speed">
