@@ -8,44 +8,63 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+
         <div id="app">
+
             <h1>The Assignment</h1>
+
+            <!-- GPS COORDINATES -->
             <section class="gpsContainer">
-                <iframe
-                    width="300"
-                    height="300"
+                <!-- <iframe
+                    width="400"
+                    height="400"
                     frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDHhRzuov8HVtA1c1uoxQ-iJgduWyGXv-k&q={{ gps }}" 
+                    v-bind:src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDHhRzuov8HVtA1c1uoxQ-iJgduWyGXv-k&q=' + gps" 
                     allowfullscreen>
-                </iframe>
+                </iframe> -->
                 <p>{{ gps }}</p>
             </section>
+
             <section class="infoContainer">
+                <!-- SPEED -->
                 <div class="speed">
                     <p>Current Speed</p>
-                    <p>{{ speed }} km/h</p>
                     <barchart-speed></barchart-speed>
+                    <p>{{ speed }} km/h</p>
                 </div>
+                <!-- STATE OF CHANGE -->
                 <div class="soc">
-                    <p>State of Change</p>
-                    <p>{{ soc }} %</p>
+                    <p>State of Charge</p>
                     <barchart-soc></barchart-soc>
+                    <p>{{ soc }} %</p>
                 </div>
                 <footer>
+                    <!-- ENERGY -->
                     <div class="energy">
                         <p>Energy</p>
                         <p>{{ energy }} kW</p>
                     </div>
+                    <!-- ODOMETER -->
                     <div class="odo">
                         <p>Odometer</p>
                         <p>{{ odo }} km</p>
                     </div>
                 </footer>
             </section>
-        </div>        
+
+            <section class="linechart">
+                <p>Speed Profile</p>
+                <linechart-speed></linechart-speed>
+            </section>
+
+            <section class="linechart">
+                <p>State of Charge Profile</p>
+                <linechart-soc></linechart-soc>
+            </section>
+        </div>
+     
     </body>
 
     <script src="./index.js"></script>
-    
-    <!-- <script src="./barchart.js"></script> -->
+
 </html>
