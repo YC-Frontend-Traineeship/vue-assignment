@@ -2,24 +2,23 @@
     display: flex;
     flex-wrap: wrap;
 }
-
 h1 {
     width: 100%;
 }
 .gpsContainer {
     margin-right: 50px;
 }
-
+.linechart {
+    width: 100%;
+}
 .speed,
 .soc {
     max-width: 400px;
 }
-
 section footer {
     display: flex;
     min-width: 200px;
 }
-
 section footer div {
     margin-right: 70px;
 }

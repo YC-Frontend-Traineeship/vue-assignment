@@ -16,10 +16,10 @@
             <!-- GPS COORDINATES -->
             <section class="gpsContainer">
                 <iframe
-                    width="300"
-                    height="300"
+                    width="400"
+                    height="400"
                     frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDHhRzuov8HVtA1c1uoxQ-iJgduWyGXv-k&q={{ gps }}" 
+                    v-bind:src="'https://www.google.com/maps/embed/v1/place?key=AIzaSyDHhRzuov8HVtA1c1uoxQ-iJgduWyGXv-k&q=' + gps" 
                     allowfullscreen>
                 </iframe>
                 <p>{{ gps }}</p>
@@ -34,7 +34,7 @@
                 </div>
                 <!-- STATE OF CHANGE -->
                 <div class="soc">
-                    <p>State of Change</p>
+                    <p>State of Charge</p>
                     <barchart-soc></barchart-soc>
                     <p>{{ soc }} %</p>
                 </div>
@@ -52,11 +52,13 @@
                 </footer>
             </section>
 
-            <section>
+            <section class="linechart">
+                <p>Speed Profile</p>
                 <linechart-speed></linechart-speed>
             </section>
 
-            <section>
+            <section class="linechart">
+                <p>State of Charge Profile</p>
                 <linechart-soc></linechart-soc>
             </section>
         </div>
@@ -64,6 +66,5 @@
     </body>
 
     <script src="./index.js"></script>
-    
-    <!-- <script src="./barchart.js"></script> -->
+
 </html>
