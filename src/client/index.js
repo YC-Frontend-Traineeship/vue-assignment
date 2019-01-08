@@ -1,3 +1,4 @@
+
 //  VUE COMPONENTS
 Vue.component('barchart-speed', {
     props: ['speed'],
@@ -15,7 +16,6 @@ Vue.component('linechart-soc', {
     props: ['soc'],
     template: '<canvas id="linechart-soc"></canvas>'
 })
-
 
 var websocketData = function () {
     // CREATE A NEW WEBSOCKETS CONNECTION
@@ -63,7 +63,7 @@ var app = new Vue({
 
 // BARCHART SPEED
 var ctx1 = document.getElementById("barchart-speed");
-var barchartSpeed = new Chart(ctx1, {
+var chartSpeed = new Chart(ctx1, {
     type: 'horizontalBar',
     data: {
         labels: [""],
@@ -213,8 +213,3 @@ var linechartSOC = new Chart(ctx4, {
         }
     }
 });
-
-function addDataSOC(linechartSOC, data) {
-    linechartSOC.data.datasets[0].data.unshift(data)
-    linechartSOC.update();
-}
